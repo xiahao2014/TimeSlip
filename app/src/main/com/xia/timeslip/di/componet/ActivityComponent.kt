@@ -1,0 +1,17 @@
+package com.xia.timeslip.di.componet
+
+import com.xia.timeslip.di.module.ActivityModule
+import com.xia.timeslip.di.scope.PerActivity
+import com.xia.timeslip.presentation.screen.home.HomeActivity
+import dagger.Subcomponent
+
+/**
+ * Created by user on 2017/11/18.
+ */
+
+@PerActivity
+@Subcomponent(modules = arrayOf(ActivityModule::class))
+interface ActivityComponent {
+
+    fun inject(homeActivity: HomeActivity)
+}
