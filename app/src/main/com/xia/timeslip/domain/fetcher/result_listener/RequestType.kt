@@ -9,7 +9,7 @@ enum class RequestType {
     POPULAR_SHOTS,
     RECENT_SHOTS,
     FOLLOWINGS_SHOTS,
-    LIKED_SHOTS,
+    ONE_READS,
     COMMENTS,
     LIKE,
     TYPE_NONE

@@ -27,7 +27,7 @@ abstract class ApiPresenter<VIEW : BaseContract.View> : BasePresenter<VIEW>(), R
     protected val POPULAR_SHOTS = RequestType.POPULAR_SHOTS
     protected val RECENT_SHOTS = RequestType.RECENT_SHOTS
     protected val FOLLOWINGS_SHOTS = RequestType.FOLLOWINGS_SHOTS
-    protected val LIKED_SHOTS = RequestType.LIKED_SHOTS
+    protected val ONE_READS = RequestType.ONE_READS
     protected val COMMENTS = RequestType.COMMENTS
     protected val LIKE = RequestType.LIKE
     protected val SUCCESS = Status.SUCCESS

@@ -1,6 +1,5 @@
 package com.xia.timeslip.presentation.screen.home
 
-import com.xia.timeslip.data.response.FuckGoods
 import com.xia.timeslip.presentation.mvp.api.ApiContract
 
 /**
@@ -10,9 +9,11 @@ interface HomeContract {
 
     interface View : ApiContract.View {
 
-        fun onDataReceive(fuckGoods: List<FuckGoods>)
+        fun openOneFragment()
 
-        fun showNoShots()
+//        fun onDataReceive(fuckGoods: List<FuckGoods>)
+//
+//        fun showNoShots()
     }
 
 

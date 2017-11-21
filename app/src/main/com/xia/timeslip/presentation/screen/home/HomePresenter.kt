@@ -16,12 +16,6 @@ class HomePresenter @Inject constructor(private val oneInteractor: OneInteractor
 
     override fun onPresenterCreate() {
         super.onPresenterCreate()
-        fetch(oneInteractor.getAndroidData(page = 1), LIKED_SHOTS) {
-            view?.hideLoading()
-            if (!it.error)
-                view.onDataReceive(it.results)
-            else
-                view.showNoShots()
-        }
+        view?.openOneFragment()
     }
 }

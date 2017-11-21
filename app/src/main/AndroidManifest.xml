@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="news.xia.com.timeslip"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="news.xia.com.timeslip">
 
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -13,8 +13,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name="com.xia.timeslip.presentation.screen.home.HomeActivity">
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name="com.xia.timeslip.presentation.screen.home.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
