@@ -5,9 +5,7 @@ package com.xia.timeslip.network
  */
 object ApiConstants {
 
-    //    const val ONE_LIST = "http://v3.wufazhuce.com:8000/api/onelist/"
-    const val ONE_LIST = "http://gank.io/api/"
-
+    const val ONE_LIST = "http://v3.wufazhuce.com:8000/api/"
     const val KAI_YAN = "http://baobab.kaiyanapp.com/api/v4/tabs/selected/"
 
 }
