@@ -1,8 +1,7 @@
 package com.xia.timeslip.domain.interactor
 
 import com.xia.timeslip.data.repository.OneDataRepository
-import com.xia.timeslip.data.response.FuckGoods
-import com.xia.timeslip.data.response.JsonResult
+import com.xia.timeslip.data.response.OneReadBean
 import io.reactivex.Observable
 import javax.inject.Inject
 
@@ -20,5 +19,5 @@ class OneInteractor @Inject constructor(private val oneDataRepository: OneDataRe
 //                .doOnNext { userDataRepository.logIn() }//保存登录状态
 //    }
 
-    fun getAndroidData(page: Int): Observable<JsonResult<List<FuckGoods>>> = oneDataRepository.getAndroidData(page)
+    fun getAndroidData(): Observable<List<OneReadBean>> = oneDataRepository.getOneReadingList()
 }

@@ -24,6 +24,6 @@ class OneDataRepository @Inject constructor(
 
 
     //请求接口，返回Flowable<TokenResponse>
-    fun getAndroidData(page: Int) = oneApiService.getAndroidData(page)
+    fun getOneReadingList() = oneApiService.getOneReadingList()
 
 }

@@ -23,12 +23,9 @@ class OnePresenter @Inject constructor(private val oneInteractor: OneInteractor)
 
     override fun onPresenterCreate() {
         super.onPresenterCreate()
-        fetch(oneInteractor.getAndroidData(page = 1), ONE_READS) {
+        fetch(oneInteractor.getAndroidData(), ONE_READS) {
             view?.hideLoading()
-            if (!it.error)
-                view.oneReadList(it.results)
-            else
-                view.showNoRead()
+            print(it)
         }
     }
 
