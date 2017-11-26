@@ -1,15 +1,16 @@
 package com.xia.timeslip.presentation.screen.one
 
+import com.xia.timeslip.domain.entity.Essay
 import com.xia.timeslip.domain.interactor.OneInteractor
 import com.xia.timeslip.presentation.mvp.api.ApiPresenter
 import javax.inject.Inject
 
 /**
+ * one
  * Created by xiahao on 2017/11/21.
  */
 class OnePresenter @Inject constructor(private val oneInteractor: OneInteractor)
     : ApiPresenter<OneContract.View>(), OneContract.Presenter {
-
 
 //    @OnLifecycleEvent(value = Lifecycle.Event.ON_START)
 //    fun onStart() {
@@ -23,9 +24,27 @@ class OnePresenter @Inject constructor(private val oneInteractor: OneInteractor)
 
     override fun onPresenterCreate() {
         super.onPresenterCreate()
-        fetch(oneInteractor.getAndroidData(), ONE_READS) {
+        val success = { it: List<Essay> ->
+            if (it.isNotEmpty()) {
+                view?.oneReadList(it)
+                getOneReadDetail(it[0].content_id!!)
+            } else {
+                view?.hideLoading()
+                view?.showNoRead() ?: Unit
+            }
+        }
+
+        fetch(oneInteractor.getOneEssayList(), ONE_READS, success)
+    }
+
+    override fun getOneReadDetail(content_id: String) {
+        fetch(oneInteractor.getReadDetail(content_id), ONE_READS) {
             view?.hideLoading()
-            print(it)
+            if (!it.hp_content.isNullOrBlank()) {
+                view?.showReadDetail(it) ?: Unit
+            } else {
+                view?.showNoRead()
+            }
         }
     }
 

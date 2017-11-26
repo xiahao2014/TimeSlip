@@ -1,6 +1,7 @@
 package com.xia.timeslip.di.module
 
 import android.app.Application
+import com.xia.timeslip.data.mapper.Mapper
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -15,7 +16,7 @@ class ApplicationModule(private val application: Application) {
     @Provides
     fun provideApplication(): Application = application
 
-//    @Singleton
-//    @Provides
-//    fun provideMapper(): Mapper = Mapper()
+    @Singleton
+    @Provides
+    fun provideMapper(): Mapper = Mapper()
 }
