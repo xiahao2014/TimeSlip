@@ -15,8 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.xia.timeslip.presentation.screen.home.HomeActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:name="com.xia.timeslip.presentation.screen.home.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

@@ -19,9 +19,4 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include
-        android:id="@+id/container"
-        layout="@layout/content_main" />
-
-
 </android.support.design.widget.CoordinatorLayout>

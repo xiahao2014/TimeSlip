@@ -1,7 +1,8 @@
 <resources>
 
+
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="@style/BaseTheme">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -9,10 +10,30 @@
     </style>
 
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="BaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- 设置没有标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 设置activity切换动画 -->
+        <item name="android:windowAnimationStyle">@style/activityAnimation</item>
+        <!--设置状态栏颜色-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+    </style>
 
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <!-- animation 样式 -->
+    <style name="activityAnimation" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_start</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_finish</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_out_start</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_in_finish</item>
+    </style>
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
