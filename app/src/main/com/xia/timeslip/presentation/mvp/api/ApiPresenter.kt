@@ -3,8 +3,8 @@ package com.xia.timeslip.presentation.mvp.api
 import android.support.annotation.CallSuper
 import com.xia.timeslip.domain.fetcher.Fetcher
 import com.xia.timeslip.domain.fetcher.Status
+import com.xia.timeslip.domain.fetcher.result_listener.ResultListener
 import com.xia.timeslip.domain.result_listener.RequestType
-import com.xia.timeslip.domain.result_listener.ResultListener
 import com.xia.timeslip.presentation.mvp.base.BaseContract
 import com.xia.timeslip.presentation.mvp.base.BasePresenter
 import io.reactivex.Completable

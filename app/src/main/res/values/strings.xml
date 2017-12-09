@@ -7,4 +7,9 @@
 
     <string name="error_title">Something went wrong</string>
     <string name="arc_view_image">Arc view image</string>
+
+
+    <string name="behavior_my_fab_horizontal">
+        com.xia.timeslip.presentation.widget.behavior.ScrollAwareFABBehavior</string>
+
 </resources>

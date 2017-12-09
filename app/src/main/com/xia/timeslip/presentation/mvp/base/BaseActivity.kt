@@ -46,9 +46,9 @@ abstract class BaseActivity<V : BaseContract.View, P : BaseContract.Presenter<V>
 
     @CallSuper
     override fun onBackPressed() {
-        if (navigator.hasBackStack())
-            navigator.goBack()
-        else
+//        if (navigator.hasBackStack())
+//            navigator.goBack()
+//        else
             super.onBackPressed()
     }
 

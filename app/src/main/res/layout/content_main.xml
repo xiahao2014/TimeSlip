@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/bg_color"
-        android:scrollbars="none"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        android:scrollbars="none"/>
 
 </android.support.constraint.ConstraintLayout>

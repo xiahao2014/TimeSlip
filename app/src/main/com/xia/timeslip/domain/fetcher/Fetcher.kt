@@ -2,7 +2,7 @@ package com.xia.timeslip.domain.fetcher
 
 import com.xia.timeslip.data.cache.MemoryCache
 import com.xia.timeslip.domain.result_listener.RequestType
-import com.xia.timeslip.domain.result_listener.ResultListener
+import com.xia.timeslip.domain.fetcher.result_listener.ResultListener
 import io.reactivex.*
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable

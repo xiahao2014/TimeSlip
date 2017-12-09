@@ -1,5 +1,6 @@
 package com.xia.timeslip.presentation.screen.home
 
+import android.support.v4.app.Fragment
 import com.xia.timeslip.presentation.mvp.api.ApiContract
 
 /**
@@ -11,13 +12,13 @@ interface HomeContract {
 
         fun openOneFragment()
 
-//        fun onDataReceive(fuckGoods: List<FuckGoods>)
-//
-//        fun showNoShots()
+        fun setToolBarTitle(title: String)
     }
 
 
-    interface Presenter : ApiContract.Presenter<View>
+    interface Presenter : ApiContract.Presenter<View> {
+        fun handleFragmentChanges(currentTag: String, fragment: Fragment)
+    }
 
 }
 

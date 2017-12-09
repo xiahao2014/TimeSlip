@@ -33,7 +33,7 @@ class OnePresenter @Inject constructor(private val oneInteractor: OneInteractor)
                 view?.showNoRead() ?: Unit
             }
         }
-
+        view?.showLoading()
         fetch(oneInteractor.getOneEssayList(), ONE_READS, success)
     }
 
@@ -50,8 +50,8 @@ class OnePresenter @Inject constructor(private val oneInteractor: OneInteractor)
 
 
     override fun onRequestStart() {
-        super.onRequestStart()
-        view?.showLoading()
+//        super.onRequestStart()
+//        view?.showLoading()
     }
 
     override fun onRequestError(errorMessage: String?) {
