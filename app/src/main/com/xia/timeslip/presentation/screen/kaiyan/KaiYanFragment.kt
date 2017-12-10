@@ -1,5 +1,7 @@
 package com.xia.timeslip.presentation.screen.kaiyan
 
+import android.os.Bundle
+import android.view.View
 import com.xia.timeslip.presentation.mvp.base.BaseFragment
 import com.xia.timeslip.presentation.utils.L
 import javax.inject.Inject
@@ -14,6 +16,11 @@ class KaiYanFragment : BaseFragment<KaiYanContract.View, KaiYanContract.Presente
     protected lateinit var kaiyanPresenter: KaiYanPresenter
 
     override fun initPresenter() = kaiyanPresenter
+
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+    }
+
 
     override fun injectDependencies() {
         activityComponent.inject(this)

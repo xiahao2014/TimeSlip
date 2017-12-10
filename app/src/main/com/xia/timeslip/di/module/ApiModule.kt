@@ -2,7 +2,7 @@ package com.xia.timeslip.di.module
 
 
 import com.xia.timeslip.network.ApiConstants
-import com.xia.timeslip.network.EyepetizerApiService
+import com.xia.timeslip.network.KaiYanApiService
 import com.xia.timeslip.network.OneApiService
 import dagger.Module
 import dagger.Provides
@@ -91,8 +91,8 @@ class ApiModule {
 
     @Singleton
     @Provides
-    fun provideEyepetizerApiService(@Named("EyepetizerRetrofit") retrofit: Retrofit): EyepetizerApiService {
-        return retrofit.create(EyepetizerApiService::class.java)
+    fun provideEyepetizerApiService(@Named("EyepetizerRetrofit") retrofit: Retrofit): KaiYanApiService {
+        return retrofit.create(KaiYanApiService::class.java)
     }
 
 

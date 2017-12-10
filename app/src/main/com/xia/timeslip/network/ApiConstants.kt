@@ -6,9 +6,6 @@ package com.xia.timeslip.network
  */
 object ApiConstants {
 
-    const val ONE_LIST = "http://v3.wufazhuce.com:8000/api/"
-//    const val ONE_LIST = "http://baobab.kaiyanapp.com/api/"
-
-
-    const val KAI_YAN = "http://baobab.kaiyanapp.com/api/v4/tabs/selected/"
+    const val ONE_LIST = "http://v3.wufazhuce.com:8000/api/" //one阅读
+    const val KAI_YAN = "http://baobab.kaiyanapp.com/api/v4/" //开眼视频
 }

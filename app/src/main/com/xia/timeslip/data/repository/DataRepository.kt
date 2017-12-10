@@ -4,8 +4,11 @@ package com.xia.timeslip.data.repository
 import com.xia.timeslip.data.mapper.Mapper
 import com.xia.timeslip.di.scope.PerActivity
 import com.xia.timeslip.domain.entity.Essay
+import com.xia.timeslip.domain.entity.KaiYan
 import com.xia.timeslip.domain.entity.ReadDetail
+import com.xia.timeslip.domain.repository.KaiYanRspository
 import com.xia.timeslip.domain.repository.OneRepository
+import com.xia.timeslip.network.KaiYanApiService
 import com.xia.timeslip.network.OneApiService
 import io.reactivex.Flowable
 import javax.inject.Inject
@@ -15,9 +18,10 @@ import javax.inject.Inject
  * 负责请求接口并对需要的数据进行处理
  */
 @PerActivity
-class OneDataRepository @Inject constructor(
+class DataRepository @Inject constructor(
         private val oneApiService: OneApiService,
-        private val mapper: Mapper) : OneRepository {
+        private val kaiYanApiService: KaiYanApiService,
+        private val mapper: Mapper) : OneRepository, KaiYanRspository {
 
 
     override fun getEssayList(): Flowable<List<Essay>> {
@@ -28,6 +32,12 @@ class OneDataRepository @Inject constructor(
 
     override fun getReadDetail(content_id: String): Flowable<ReadDetail> {
         return oneApiService.getOneReadDetail(content_id).map {
+            mapper.translate(it)
+        }
+    }
+
+    override fun getKaiYanVideo(): Flowable<List<KaiYan>> {
+        return kaiYanApiService.getkaiYanVideo().map {
             mapper.translate(it)
         }
     }

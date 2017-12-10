@@ -1,11 +1,11 @@
 package com.xia.timeslip.data.mapper
 
+import com.xia.timeslip.data.response.kaiyan.KaiYanBean
+import com.xia.timeslip.data.response.kaiyan.KaiyaiAuthorResponse
 import com.xia.timeslip.data.response.one.AuthorResponse
 import com.xia.timeslip.data.response.one.OneContentBean
 import com.xia.timeslip.data.response.one.OneReadBean
-import com.xia.timeslip.domain.entity.Author
-import com.xia.timeslip.domain.entity.Essay
-import com.xia.timeslip.domain.entity.ReadDetail
+import com.xia.timeslip.domain.entity.*
 
 /**
  * 数据转换及处理相关(过滤掉不需要的数据)
@@ -13,6 +13,7 @@ import com.xia.timeslip.domain.entity.ReadDetail
  */
 class Mapper {
 
+    //one阅读
     fun translate(oneReadBean: OneReadBean?): List<Essay>? {
         return oneReadBean?.dataResponse?.essayResponse?.
                 asSequence()?.map {
@@ -33,5 +34,23 @@ class Mapper {
                     it.sharenum, it.commentnum)
         }
 
+    }
+
+
+    //开眼视频
+    fun translate(kaiyaiAuthorResponse: KaiyaiAuthorResponse?): KaiYanAuthor? {
+        return KaiYanAuthor(kaiyaiAuthorResponse?.id,
+                kaiyaiAuthorResponse?.name,
+                kaiyaiAuthorResponse?.description
+        )
+    }
+
+    fun translate(kaiYanBean: KaiYanBean?): List<KaiYan>? {
+        return kaiYanBean?.itemListResponse?.asSequence()?.map {
+            KaiYan(it.dataResponse?.title, it.dataResponse?.slogan,
+                    it.dataResponse?.description, it.dataResponse?.category,
+                    translate(it.dataResponse?.authotResponse), it.dataResponse?.playUrl,
+                    it.dataResponse?.duration, it.dataResponse?.date)
+        }?.toList()
     }
 }

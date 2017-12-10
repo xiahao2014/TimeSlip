@@ -1,7 +1,7 @@
 package com.xia.timeslip.presentation.screen.one
 
 import com.xia.timeslip.domain.entity.Essay
-import com.xia.timeslip.domain.interactor.OneInteractor
+import com.xia.timeslip.domain.interactor.DataInteractor
 import com.xia.timeslip.presentation.mvp.api.ApiPresenter
 import javax.inject.Inject
 
@@ -9,7 +9,7 @@ import javax.inject.Inject
  * one
  * Created by xiahao on 2017/11/21.
  */
-class OnePresenter @Inject constructor(private val oneInteractor: OneInteractor)
+class OnePresenter @Inject constructor(private val oneInteractor: DataInteractor)
     : ApiPresenter<OneContract.View>(), OneContract.Presenter {
 
 //    @OnLifecycleEvent(value = Lifecycle.Event.ON_START)

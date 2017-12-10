@@ -9,6 +9,11 @@ interface KaiYanContract {
 
     interface View : ApiContract.View
 
-    interface Presenter : ApiContract.Presenter<View>
+    interface Presenter : ApiContract.Presenter<View> {
+
+
+        fun getKaiYanVideo()
+
+    }
 
 }
