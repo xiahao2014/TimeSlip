@@ -17,7 +17,4 @@ class ItemListResponse {
     @Expose
     var dataResponse: DataResponse? = null
 
-    @SerializedName("adIndex")
-    @Expose
-    var adIndex: Int? = null
 }

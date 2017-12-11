@@ -20,12 +20,15 @@ class KaiYanPresenter @Inject constructor(private val kaiYanInteractor: DataInte
         fetch(kaiYanInteractor.getKaiYanVideo()) {
             view?.hideLoading()
             if (it.isNotEmpty()) {
-
+                view?.shwoVideo(it)
             } else {
-
+                view?.showNoVideo()
             }
         }
     }
 
-
+    override fun onRequestStart() {
+        super.onRequestStart()
+        view?.showLoading()
+    }
 }

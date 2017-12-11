@@ -1,4 +1,4 @@
-package io.armcha.ribble.presentation.utils.glide
+package com.xia.timeslip.presentation.utils.glide
 
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
@@ -8,6 +8,8 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import io.armcha.ribble.presentation.utils.glide.GlideApp
+import io.armcha.ribble.presentation.utils.glide.GlideRequest
 
 /**
  * Created by Chatikyan on 28.08.2017.

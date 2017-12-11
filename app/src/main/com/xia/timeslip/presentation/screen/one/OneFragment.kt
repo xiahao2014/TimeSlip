@@ -80,7 +80,9 @@ class OneFragment : BaseFragment<OneContract.View, OneContract.Presenter>(), One
         } else {
             read_auther.visibility = View.GONE
         }
-        RichText.fromHtml(readDetail?.hp_content).into(read_content)
+        RichText.from(readDetail?.hp_content)
+                .noImage(true) // 不显示并且不加载图片
+                .into(read_content)
         refreshLayout.isRefreshing = false
     }
 

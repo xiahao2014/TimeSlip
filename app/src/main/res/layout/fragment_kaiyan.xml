@@ -4,9 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:text="开眼视频"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
+    <com.xia.timeslip.presentation.widget.GridRecyclerView
+        android:layout_width="match_parent"
+        android:layout_height=
+
+            "match_parent"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical"
+        android:scrollbarThumbVertical="@drawable/scrollbar"
+        android:layoutAnimation="@anim/grid_layout_animation_from_bottom" />
+
+    <include layout="@layout/progress_bar"/>
 </android.support.constraint.ConstraintLayout>

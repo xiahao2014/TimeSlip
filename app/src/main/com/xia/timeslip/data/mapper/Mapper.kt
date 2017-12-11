@@ -46,11 +46,15 @@ class Mapper {
     }
 
     fun translate(kaiYanBean: KaiYanBean?): List<KaiYan>? {
-        return kaiYanBean?.itemListResponse?.asSequence()?.map {
-            KaiYan(it.dataResponse?.title, it.dataResponse?.slogan,
-                    it.dataResponse?.description, it.dataResponse?.category,
-                    translate(it.dataResponse?.authotResponse), it.dataResponse?.playUrl,
-                    it.dataResponse?.duration, it.dataResponse?.date)
-        }?.toList()
+        return kaiYanBean?.itemListResponse?.asSequence()?.
+                filterNot { it.dataResponse?.dataType.equals("TextHeader") }?.
+                filterNot { it.dataResponse?.dataType.equals("TextFooter") }?.
+                filterNot { it.dataResponse?.dataType.equals("ItemCollection") }?.
+                map {
+                    KaiYan(it.dataResponse?.title, it.dataResponse?.slogan,
+                            it.dataResponse?.description, it.dataResponse?.category,
+                            translate(it.dataResponse?.authotResponse), it.dataResponse?.playUrl,
+                            it.dataResponse?.duration, it.dataResponse?.date)
+                }?.toList()
     }
 }

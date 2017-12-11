@@ -12,10 +12,9 @@ data class KaiYan(var title: String?, var slogan: String?, var description: Stri
                   var duration: Int?, var date: Long?) {
 
     val videDate = format(date)
-    val cal = Calendar.getInstance()
     private fun format(timeInMillis: Long?): String? {
-        if (timeInMillis != null)
-            cal.timeInMillis = timeInMillis
+        val cal = Calendar.getInstance()
+        cal.timeInMillis = timeInMillis!!
         val date = cal.time
         return SimpleDateFormat(
                 "yyyy-MM-dd HH:mm:ss", Locale.CHINA).format(date)

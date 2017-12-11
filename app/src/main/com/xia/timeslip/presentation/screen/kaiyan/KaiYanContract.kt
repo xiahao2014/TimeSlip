@@ -1,5 +1,6 @@
 package com.xia.timeslip.presentation.screen.kaiyan
 
+import com.xia.timeslip.domain.entity.KaiYan
 import com.xia.timeslip.presentation.mvp.api.ApiContract
 
 /**
@@ -7,13 +8,16 @@ import com.xia.timeslip.presentation.mvp.api.ApiContract
  */
 interface KaiYanContract {
 
-    interface View : ApiContract.View
+    interface View : ApiContract.View {
+
+        fun shwoVideo(kaiyan: List<KaiYan>)
+        fun showNoVideo()
+
+    }
 
     interface Presenter : ApiContract.Presenter<View> {
 
-
         fun getKaiYanVideo()
-
     }
 
 }
